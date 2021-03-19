@@ -1,0 +1,7 @@
+<h1>Edit <%= @user.username %></h1>
+<ul>
+<% @user.errors.full_messages.each do |error| %>
+  <li><%= error %></li>
+<% end %>
+
+<%= render 'form', user: @user %>

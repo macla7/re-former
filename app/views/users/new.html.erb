@@ -18,19 +18,7 @@
 <input type="submit" name="commit" value="New">
 -->
 
-<%= form_with model: @user do |form| %>
-  <%= form.label :username, "Username:" %>
-  <%= form.text_field :username %>
-
-  <%= form.label :email, 'Email:' %>
-  <%= form.text_field :email %>
-
-  <%= form.label :password, 'Password' %>
-  <%= form.password_field :password%>
-
-  <%= form.submit 'Create boi'%>
-<% end %>
-
+<%= render 'form', user: @user %>
 
 <!--
 <% 
