@@ -18,10 +18,7 @@
 <input type="submit" name="commit" value="New">
 -->
 
-<!--
-<% 
-=begin %>
-<%= form_tag "/users", method: "post" do |form| %>
+<%= form_with model: @user do |form| %>
   <%= form.label :username, "Username:" %>
   <%= form.text_field :username %>
 
@@ -29,14 +26,15 @@
   <%= form.text_field :email %>
 
   <%= form.label :password, 'Password' %>
-  <%= form.password :password %>
+  <%= form.password_field :password%>
 
   <%= form.submit 'Create boi'%>
 <% end %>
-<% 
-=end %>
--->
 
+
+<!--
+<% 
+=begin %>
 <%= form_tag "/users", method: "post" do |form| %>
   <%= label_tag :username, "Username:" %>
   <%= text_field_tag :username, params[:username] %>
@@ -49,3 +47,6 @@
 
   <%= submit_tag 'New'%>
 <% end %>
+<% 
+=end %>
+-->
