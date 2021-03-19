@@ -1,0 +1,51 @@
+<h1>New Form</h1>
+
+<p>Look at me, I'm a new form, look at me!</p>
+
+<!--
+<form action="/users" method="post" accept-charset=
+"UTF-8" >
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="user[username]" />
+
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="user[email]" />
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="user[password]" />
+
+<input type="submit" name="commit" value="New">
+-->
+
+<!--
+<% 
+=begin %>
+<%= form_tag "/users", method: "post" do |form| %>
+  <%= form.label :username, "Username:" %>
+  <%= form.text_field :username %>
+
+  <%= form.label :email, 'Email:' %>
+  <%= form.text_field :email %>
+
+  <%= form.label :password, 'Password' %>
+  <%= form.password :password %>
+
+  <%= form.submit 'Create boi'%>
+<% end %>
+<% 
+=end %>
+-->
+
+<%= form_tag "/users", method: "post" do |form| %>
+  <%= label_tag :username, "Username:" %>
+  <%= text_field_tag :username, params[:username] %>
+
+  <%= label_tag :email, 'Email:' %>
+  <%= text_field_tag :email, params[:email] %>
+
+  <%= label_tag :password, 'Password' %>
+  <%= password_field_tag :password, params[:password] %>
+
+  <%= submit_tag 'New'%>
+<% end %>
